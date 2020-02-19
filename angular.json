@@ -29,6 +29,11 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "foods.json",
+                "input": "src/assets/mockup-data",
+                "output": "assets/mockup-data"
               }
             ],
             "styles": [
