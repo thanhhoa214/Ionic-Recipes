@@ -1,0 +1,25 @@
+<ion-list class="ion-margin-horizontal">
+  <ion-list-header>
+    <h2><strong>Food Pick</strong></h2>
+  </ion-list-header>
+
+  <div *ngFor="let item of foods">
+    <ion-button
+      [routerLink]="['/foods/'+item.id]"
+      fill="none"
+    >
+      <ion-item>
+        <ion-avatar slot="start">
+          <img
+            [src]="item.url"
+            [title]="item.title"
+          />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item.title}}</h2>
+          <p>{{item.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-button>
+  </div>
+</ion-list>
