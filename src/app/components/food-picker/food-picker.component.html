@@ -5,19 +5,28 @@
 
   <div *ngFor="let item of foods">
     <ion-button
-      [routerLink]="['/foods/'+item.id]"
+      [routerLink]="['/foods/' + item.id]"
       fill="none"
+      class="btn-wrapper"
     >
       <ion-item>
         <ion-avatar slot="start">
-          <img
-            [src]="item.url"
-            [title]="item.title"
-          />
+          <img [src]="item.url" [title]="item.title" />
         </ion-avatar>
         <ion-label>
-          <h2>{{item.title}}</h2>
-          <p>{{item.description}}</p>
+          <h2>
+            <ion-badge>{{ item.price }}</ion-badge>
+            {{ item.title }}
+          </h2>
+          <p>{{ item.description }}</p>
+          <ion-button
+            (click)="add($event, item.id)"
+            shape="round"
+            color="dark"
+            class="btn-add"
+          >
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
         </ion-label>
       </ion-item>
     </ion-button>

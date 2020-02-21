@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "deploy-ionic-food-app": {
+      "hosting": {
+        "app": [
+          "deploy-ionic-food-app"
+        ]
+      }
+    }
+  }
+}

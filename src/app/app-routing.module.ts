@@ -4,30 +4,30 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./home/home.module").then(m => m.HomePageModule)
+    loadChildren: () => import("./pages/home/home.module").then(m => m.HomePageModule)
   },
   {
     path: "home",
-    loadChildren: () => import("./home/home.module").then(m => m.HomePageModule)
+    loadChildren: () => import("./pages/home/home.module").then(m => m.HomePageModule)
   },
   {
     path: "my-order",
     loadChildren: () =>
-      import("./order/order.module").then(m => m.OrderPageModule)
+      import("./pages/order/order.module").then(m => m.OrderPageModule)
   },
   {
     path: "saved",
     loadChildren: () =>
-      import("./saved/saved.module").then(m => m.SavedPageModule)
+      import("./pages/saved/saved.module").then(m => m.SavedPageModule)
   },
   {
     path: "me",
     loadChildren: () =>
-      import("./profile/profile.module").then(m => m.ProfilePageModule)
+      import("./pages/profile/profile.module").then(m => m.ProfilePageModule)
   },
   {
     path: 'foods/:id',
-    loadChildren: () => import('./food-detail/food-detail.module').then( m => m.FoodDetailPageModule)
+    loadChildren: () => import('./pages/food-detail/food-detail.module').then( m => m.FoodDetailPageModule)
   }
 ];
 @NgModule({

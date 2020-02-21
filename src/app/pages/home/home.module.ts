@@ -6,21 +6,21 @@ import { FormsModule } from "@angular/forms";
 import { HomePage } from "./home.page";
 import {
   SearchBarComponent,
-  FoodPickerComponent,
   PromotionComponent
-} from "../components";
+} from "../../components";
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
+    IonicModule,
+    ComponentsModule,
     RouterModule.forChild([{ path: "", component: HomePage }])
   ],
   declarations: [
     HomePage,
     SearchBarComponent,
-    FoodPickerComponent,
     PromotionComponent
   ]
 })

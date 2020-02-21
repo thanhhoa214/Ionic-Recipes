@@ -37,11 +37,15 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               {
                 "input": "src/theme/variables.scss"
               },
               {
                 "input": "src/global.scss"
+              },
+              {
+                "input": "node_modules/bootstrap-utilities/bootstrap-utilities.css"
               }
             ],
             "scripts": []
@@ -103,7 +107,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css"
+            ],
             "scripts": [],
             "assets": [
               {
@@ -133,7 +139,9 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -174,6 +182,10 @@
               "devServerTarget": "app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

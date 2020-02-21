@@ -1,21 +1,22 @@
-import { Component, OnInit, Injectable } from "@angular/core";
-import { Food } from "src/app/interfaces/Food";
-import { HttpClient } from "@angular/common/http";
-
-const FOODS_URL = "assets/mockup-data/foods.json";
-
-@Injectable()
+import { Component, OnInit, Input } from "@angular/core";
+import { IFood } from "src/app/interfaces";
+import ShoppingCartService from "../../services/shopping-cart.service";
 @Component({
   selector: "app-food-picker",
   templateUrl: "./food-picker.component.html",
   styleUrls: ["./food-picker.component.scss"]
 })
 export class FoodPickerComponent implements OnInit {
-  public foods: Food[];
+  @Input() public foods: IFood[];
+  // @Input('foods') public other_name_foods: IFood[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private _cartServices: ShoppingCartService) {}
 
-  ngOnInit() {
-    this.http.get(FOODS_URL).subscribe((data: Food[]) => (this.foods = data));
+  ngOnInit() {}
+
+  add(event, id) {
+    this._cartServices.addToCart(id);
+    event.preventDefault();
+    event.stopPropagation();
   }
 }

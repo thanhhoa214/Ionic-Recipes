@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-search-bar></app-search-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="viewCart()">
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+    <ion-badge color="danger" mode="ios">{{itemCounter}}</ion-badge>
+  </ion-fab>
+  <!-- <div *ngFor="let item of cart?.itemMap">
+    <ion-item>
+      <ion-label>{{item.id}} : {{item.quantity}}</ion-label>
+    </ion-item>
+  </div> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6">
+        <app-promotion></app-promotion>
+      </ion-col>
+      <ion-col size-md="6">
+        <app-food-picker [foods]="foods"></app-food-picker>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

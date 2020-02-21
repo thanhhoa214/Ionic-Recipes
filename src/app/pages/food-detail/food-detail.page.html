@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <img [src]="food?.url" />
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>{{food?.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{food?.description}}
+            <ion-list>
+              <ion-button (click)="onClick()">
+                <ion-icon slot="start" name="add"></ion-icon>
+                Add to cart
+              </ion-button>
+              <ion-button (click)="onClick()" color="danger">
+                <ion-icon slot="start" name="heart"></ion-icon>
+                Love
+              </ion-button>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

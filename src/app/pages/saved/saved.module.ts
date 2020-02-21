@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { SavedPageRoutingModule } from './saved-routing.module';
 
@@ -13,7 +14,8 @@ import { SavedPage } from './saved.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SavedPageRoutingModule
+    SavedPageRoutingModule,
+    MatTabsModule
   ],
   declarations: [SavedPage]
 })
