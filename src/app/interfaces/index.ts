@@ -1,9 +1,9 @@
 export interface IFood {
   id: string;
   title: string;
-  description: string;
-  url: string;
-  tags: string[];
+  description?: string;
+  url?: string;
+  tags?: string[];
 }
 
 export interface IShoppingCart {

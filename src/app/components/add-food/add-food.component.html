@@ -1,0 +1,23 @@
+<h1>List of Food</h1>
+<h2>Loading: {{ loading }}</h2>
+<h2>Error: {{ error | json }}</h2>
+<ion-item *ngFor="let food of foods">
+  <ion-label>{{ food.title }}</ion-label>
+  <ion-button (click)="delete(food.id)">Delete</ion-button>
+</ion-item>
+
+<hr />
+
+<form (submit)="submit($event)">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Name"
+    />
+  </div>
+  <ion-button type="submit" class="btn btn-primary">Submit</ion-button>
+</form>

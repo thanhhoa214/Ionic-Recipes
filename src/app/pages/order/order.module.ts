@@ -8,7 +8,6 @@ import { OrderPageRoutingModule } from "./order-routing.module";
 
 import { OrderPage } from "./order.page";
 
-import { FoodPickerComponent } from "../../components";
 import { ComponentsModule } from "src/app/components/components.module";
 
 @NgModule({
@@ -19,6 +18,6 @@ import { ComponentsModule } from "src/app/components/components.module";
     ComponentsModule,
     OrderPageRoutingModule
   ],
-  declarations: [OrderPage, FoodPickerComponent]
+  declarations: [OrderPage]
 })
 export class OrderPageModule {}

@@ -12,6 +12,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FoodService } from "./services/food.service";
 import ShoppingCartService from "./services/shopping-cart.service";
+import { StoreModule } from "@ngrx/store";
+import { shoppingReducer } from "./store/reducers/shopping.reducer";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { EffectsModule } from "@ngrx/effects";
+import { ShoppingEffect } from "./store/effects/shopping.effect";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +27,9 @@ import ShoppingCartService from "./services/shopping-cart.service";
     IonicModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ shopping: shoppingReducer }),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([ShoppingEffect])
   ],
   providers: [
     StatusBar,
